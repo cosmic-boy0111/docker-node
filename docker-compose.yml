@@ -1,0 +1,19 @@
+version: '3.8'
+# this is helpful for creating multi container in single go
+services:
+  # you can specify any name for the service
+  postgres:
+    image: postgres # came from hub.docker.com 
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: review
+      POSTGRES_PASSWORD: password 
+
+  redis:
+    image: redis # came from hub.docker.com
+    ports:
+      - "6379:6379" 
+    
+
